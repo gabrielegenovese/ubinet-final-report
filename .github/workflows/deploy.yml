@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir out
           cp ./main.pdf ./out/thesis.pdf
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-pages-artifact@v1
         with:
           name: thesis
           path: out/thesis.pdf
