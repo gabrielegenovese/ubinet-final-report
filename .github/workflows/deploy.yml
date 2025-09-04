@@ -2,9 +2,9 @@ name: Deploy PDF
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
   workflow_dispatch:
 
@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir out
           cp ./main.pdf ./out/thesis.pdf
-      - uses: actions/upload-artifact@v4 
+      - uses: actions/upload-artifact@v4
         with:
           path: out/thesis.pdf
           if-no-files-found: error
@@ -33,13 +33,7 @@ jobs:
     permissions:
       pages: write
       id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-
