@@ -30,7 +30,7 @@ jobs:
           mv main.pdf out/thesis.pdf
 
       - name: Upload artifact for Pages
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: out
 
